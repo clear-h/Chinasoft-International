@@ -2,13 +2,13 @@ import java.util.Scanner;
 
 public class Oct3001 {
     public static void main(String[] args) {
-//        定义全局变量，玩家名字player_name，电脑名字com_name，玩家出拳player_choice，电脑出拳com_choice,玩家出拳结果p_choice,电脑出拳结果c_choice
+//        定义全局变量，玩家名字player_name，电脑名字com_name，玩家出拳player_choice，电脑出拳com_choice,玩家出拳结果p_choice_name,电脑出拳结果c_choice_name
         String player_name;
         String com_name;
         int player_choice;
         int com_choice;
-        String p_choice;
-        String c_choice;
+        String p_choice_name;
+        String c_choice_name;
         //进入界面
         System.out.println("**************************");
         System.out.println("Game name：Rock、scissor、papers");
@@ -61,30 +61,30 @@ public class Oct3001 {
         System.out.println("！！！If you make a false choice,the system will have a random choice for you！！！");
 //        将玩家选择变为出拳结果
         switch (player_choice){
-            case 1 : p_choice = "scissor" ; break ;
-            case 2 : p_choice = "rock" ; break ;
-            case 3 : p_choice = "paper" ; break ;
-            default : p_choice = "Error!!!" ;
+            case 1 : p_choice_name = "scissor" ; break ;
+            case 2 : p_choice_name = "rock" ; break ;
+            case 3 : p_choice_name = "paper" ; break ;
+            default : p_choice_name = "Error!!!" ;
         }
         com_choice = (int) Math.round(Math.random()*2+1);
 //        将电脑选择变为出拳结果
         switch (com_choice){
-            case 1 : c_choice = "scissor" ; break ;
-            case 2 : c_choice = "rock" ; break ;
-            case 3 : c_choice = "paper" ; break ;
-            default : c_choice = "Error!!!" ;
+            case 1 : c_choice_name = "scissor" ; break ;
+            case 2 : c_choice_name = "rock" ; break ;
+            case 3 : c_choice_name = "paper" ; break ;
+            default : c_choice_name = "Error!!!" ;
         }
         System.out.println("**************************\n");
         System.out.println("Results:");
 //        出拳的数值相减为1或者为-2，胜
         if (player_choice-com_choice == 1 || player_choice - com_choice == -2){
-            System.out.println(player_name + " choosed " + p_choice + ", "+ com_name + " choosed "+c_choice);
+            System.out.println(player_name + " choosed " + p_choice_name + ", "+ com_name + " choosed "+c_choice_name);
             System.out.println(player_name+" won!");
         }else if(com_choice-player_choice == 1 || com_choice - player_choice == -2){
-            System.out.println(player_name + " choosed " + p_choice + ", "+ com_name + " choosed "+c_choice);
+            System.out.println(player_name + " choosed " + p_choice_name + ", "+ com_name + " choosed "+c_choice_name);
             System.out.println(com_name+" won!");
         }else{
-            System.out.println(player_name + " choosed " + p_choice + ", "+ com_name + " choosed "+c_choice);
+            System.out.println(player_name + " choosed " + p_choice_name + ", "+ com_name + " choosed "+c_choice_name);
             System.out.println("Dogfall!");
         }
     }
